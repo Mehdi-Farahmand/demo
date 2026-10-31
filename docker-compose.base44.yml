@@ -1,0 +1,42 @@
+services:
+  web:
+    image: node:22
+    working_dir: /app
+    # Dependencies install on start (the node_modules volume outlives edits),
+    # then Vite runs in dev mode so every source edit hot-reloads.
+    command:
+      - sh
+      - -ec
+      - |
+        npm install --no-audit --no-fund
+        exec npx vite --host 0.0.0.0 --port 5173
+    ports:
+      - "3000:5173"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    environment:
+      - BASE44_PREVIEW_MODE
+      - BASE44_SANDBOX_HOST_DOMAIN
+      - BASE44_PUBLIC_HOST_SUFFIX
+      - CHOKIDAR_USEPOLLING=true
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:5173/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 60s
+    restart: on-failure
+    labels:
+      base44.project: "LEVA Landing"
+      base44.kind: "web"
+      base44.port: "3000"
+
+volumes:
+  node_modules:

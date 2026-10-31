@@ -1,0 +1,238 @@
+/* ---------- Stage 01 — Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background: url('/images/hero.jpg') center 45% / cover no-repeat;
+  transform: scale(1.03);
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(105% 65% at 50% 42%, rgba(5, 11, 22, 0.1), rgba(5, 11, 22, 0.78) 78%),
+    linear-gradient(180deg, rgba(5, 11, 22, 0.72) 0%, rgba(5, 11, 22, 0.05) 32%, rgba(5, 11, 22, 0.82) 100%);
+}
+
+.hero__header {
+  position: absolute;
+  top: 20px;
+  inset-inline: clamp(16px, 3vw, 40px);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 2vw, 28px);
+  padding: 10px clamp(14px, 1.6vw, 22px);
+  border-radius: 999px;
+}
+
+.hero__brand {
+  flex: none;
+}
+
+.hero__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 30px);
+}
+
+.hero__nav a {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hero__nav a:hover {
+  color: var(--gold);
+}
+
+.hero__pills {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 13.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pill--gold {
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  color: #0a1524;
+  font-weight: 700;
+}
+
+.pill--navy {
+  background: rgba(19, 41, 68, 0.9);
+  border: 1px solid var(--line);
+  color: var(--white);
+}
+
+.hero__center {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 1.6vw, 18px);
+  text-align: center;
+  padding: 120px 20px 190px;
+  margin-block: auto;
+}
+
+.hero__subtitle {
+  font-size: clamp(14px, 1.5vw, 19px);
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.02em;
+  margin-top: 8px;
+}
+
+.hero__en {
+  font-size: 10.5px;
+  color: var(--gold);
+  letter-spacing: 0.42em;
+  margin: 0;
+}
+
+.hero__cta {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: min(960px, calc(100% - 32px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(14px, 2vw, 28px);
+  padding: 12px 16px 12px 26px;
+  border-radius: 999px;
+}
+
+.hero__cta-text {
+  font-size: clamp(13px, 1.35vw, 16px);
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.6;
+}
+
+.hero__cta-btn {
+  flex: none;
+}
+
+/* ---------- Stage 02 — Introduction (no header) ---------- */
+.intro,
+.quiz {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(28px, 5vw, 76px) 20px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.intro__bg,
+.quiz__bg {
+  position: absolute;
+  inset: -6%;
+  background: url('/images/bg-blur.jpg') center / cover no-repeat;
+  transform: scale(1.08);
+}
+
+.intro__scrim,
+.quiz__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(90% 70% at 50% 45%, rgba(6, 14, 26, 0.42), rgba(4, 9, 18, 0.94) 82%),
+    linear-gradient(180deg, rgba(5, 11, 22, 0.85), rgba(5, 11, 22, 0.7));
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.card--intro {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(22px, 3vw, 36px);
+  padding: clamp(34px, 4.6vw, 62px);
+  border-radius: 36px;
+  text-align: center;
+}
+
+.intro__copy {
+  display: grid;
+  gap: 16px;
+}
+
+.intro__line {
+  font-size: clamp(16.5px, 2.1vw, 22px);
+  line-height: 1.95;
+  color: var(--white);
+}
+
+.intro__line--lead {
+  font-size: clamp(20px, 2.6vw, 27px);
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .hero__nav {
+    display: none;
+  }
+  .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    border-radius: 26px;
+    bottom: 18px;
+    padding: 18px;
+  }
+  .hero__cta-btn {
+    justify-content: center;
+  }
+  .hero__center {
+    padding: 150px 16px 240px;
+  }
+}
+
+@media (max-width: 560px) {
+  .leva--lg .leva__name {
+    font-size: 38px;
+  }
+  .leva--lg .leva__mark {
+    width: 52px;
+    height: 52px;
+  }
+  .hero__pills .pill--navy {
+    display: none;
+  }
+  .hero__header {
+    top: 12px;
+  }
+}
