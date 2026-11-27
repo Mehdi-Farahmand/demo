@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>هویت بصری جدید نوما</title>
+<meta name="theme-color" content="#0B1646">
+<style>
+@font-face{font-family:Meem;font-weight:300;font-display:swap;src:url(fonts/Meem-300.woff2) format("woff2")}
+@font-face{font-family:Meem;font-weight:400;font-display:swap;src:url(fonts/Meem-400.woff2) format("woff2")}
+@font-face{font-family:Meem;font-weight:500;font-display:swap;src:url(fonts/Meem-500.woff2) format("woff2")}
+@font-face{font-family:Meem;font-weight:600;font-display:swap;src:url(fonts/Meem-600.woff2) format("woff2")}
+@font-face{font-family:Meem;font-weight:700;font-display:swap;src:url(fonts/Meem-700.woff2) format("woff2")}
+@font-face{font-family:Meem;font-weight:800;font-display:swap;src:url(fonts/Meem-800.woff2) format("woff2")}
+@font-face{font-family:Meem;font-weight:900;font-display:swap;src:url(fonts/Meem-900.woff2) format("woff2")}
+@font-face{font-family:Abar;font-weight:400 1000;font-display:swap;src:url(fonts/Abar-VF.woff2) format("woff2")}
+@font-face{font-family:IRANSansX;font-weight:100 900;font-display:swap;src:url(fonts/IRANSansXVF.woff2) format("woff2")}
+@font-face{font-family:Leila;font-weight:300;font-display:swap;src:url(fonts/Leila-Light.woff2) format("woff2")}
+@font-face{font-family:Leila;font-weight:400;font-display:swap;src:url(fonts/Leila-Regular.woff2) format("woff2")}
+@font-face{font-family:Leila;font-weight:700;font-display:swap;src:url(fonts/Leila-Bold.woff2) format("woff2")}
+@font-face{font-family:Leila;font-weight:800;font-display:swap;src:url(fonts/Leila-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Leila;font-weight:900;font-display:swap;src:url(fonts/Leila-Black.woff2) format("woff2")}
+@font-face{font-family:Pelak;font-weight:400;font-display:swap;src:url(fonts/Pelak-Regular.woff2) format("woff2")}
+@font-face{font-family:Pelak;font-weight:700;font-display:swap;src:url(fonts/Pelak-Bold.woff2) format("woff2")}
+@font-face{font-family:Pelak;font-weight:900;font-display:swap;src:url(fonts/Pelak-Black.woff2) format("woff2")}
+@font-face{font-family:Peyda;font-weight:400;font-display:swap;src:url(fonts/Peyda-Regular.woff2) format("woff2")}
+@font-face{font-family:Peyda;font-weight:700;font-display:swap;src:url(fonts/Peyda-Bold.woff2) format("woff2")}
+@font-face{font-family:Peyda;font-weight:900;font-display:swap;src:url(fonts/Peyda-Black.woff2) format("woff2")}
+@font-face{font-family:Dabir;font-weight:400;font-display:swap;src:url(fonts/Dabir.woff2) format("woff2")}
+@font-face{font-family:DabirJadoo;font-display:swap;src:url(fonts/Dabir-Jadoo.woff2) format("woff2")}
+@font-face{font-family:DabirMashq;font-display:swap;src:url(fonts/Dabir-Mashq.woff2) format("woff2")}
+
+:root{--o:#FF6F1F;--n:#0B1646;--r:#1D32A6;--c:#F6F7FF;--p:#FFE3D1;--w:#B9C4FF;--ff:Meem,Peyda,Tahoma,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--c);color:var(--n);line-height:1.9;font-weight:400;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:50;background:rgba(11,22,70,.92);backdrop-filter:blur(10px);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.top b{font-weight:800;font-size:15px}
+.top a.back{font-size:13px;background:var(--o);color:var(--n);padding:4px 14px;border-radius:99px;font-weight:700}
+.toc{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;margin:0 12px}
+.toc a{font-size:12px;white-space:nowrap;padding:2px 10px;border-radius:99px;opacity:.9}
+.toc a:hover{opacity:1;background:rgba(255,255,255,.12)}
+section{padding:72px 0;position:relative}
+.dark{background:linear-gradient(135deg,#0B1646 55%,#1D32A6);color:#fff}
+.navy{background:var(--n);color:#fff}
+.orange{background:var(--o);color:var(--n)}
+.eye{color:var(--o);font-weight:700;font-size:14px;margin-bottom:6px}
+.orange .eye{color:var(--n)}
+h2{font-weight:900;font-size:clamp(30px,5vw,56px);line-height:1.35;margin-bottom:10px}
+h2 em,h1 em{font-style:normal;color:var(--o)}
+.lead{font-size:clamp(15px,2vw,19px);opacity:.82;max-width:860px;margin-bottom:34px}
+h3{font-weight:800;font-size:clamp(20px,2.6vw,28px);line-height:1.5;margin:4px 0 8px}
+p,li{font-size:15px}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{border-radius:36px;padding:30px;background:#fff;color:var(--n);box-shadow:0 12px 40px rgba(29,50,166,.08);position:relative}
+.card.n{background:var(--n);color:#fff;box-shadow:none}
+.card.o{background:var(--o);color:var(--n);box-shadow:none}
+.card.p{background:var(--p);box-shadow:none}
+.card.g{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;box-shadow:none}
+.card.r{background:var(--r);color:#fff;box-shadow:none}
+.card p{opacity:.82}
+.pill{display:inline-block;font-weight:700;font-size:13px;padding:2px 16px;border-radius:99px;background:var(--o);color:var(--n);margin-bottom:10px}
+.pill.n{background:var(--n);color:#fff}.pill.p{background:var(--p);color:var(--n)}
+.big{font-weight:900;font-size:44px;line-height:1.2;color:var(--r)}
+.card.n .big{color:var(--o)}.card.o .big{color:var(--n)}
+ul.dots{list-style:none}
+ul.dots li{padding-right:20px;position:relative;margin:7px 0}
+ul.dots li:before{content:"";position:absolute;right:0;top:.85em;width:7px;height:7px;border-radius:50%;background:var(--o)}
+.card.o ul.dots li:before{background:var(--n)}
+.row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-top:1px solid rgba(128,128,160,.25);font-size:14px}
+.row b{font-weight:800;white-space:nowrap}
+.hero{min-height:92vh;display:grid;place-items:center;text-align:center;color:#fff;background:linear-gradient(rgba(11,22,70,.78),rgba(11,22,70,.9)),url(assets/cover-hero.webp) center/cover}
+.hero h1{font-weight:900;font-size:clamp(40px,8vw,104px);line-height:1.25}
+.hero p{font-size:clamp(16px,2.4vw,24px);opacity:.85;margin-top:12px}
+.hero svg{width:96px;height:96px;margin-bottom:18px}
+.bar{display:flex;border-radius:99px;overflow:hidden;height:56px;font-weight:800;margin:0 0 24px;direction:rtl;font-size:14px}
+.bar div{display:flex;align-items:center;padding:0 22px;white-space:nowrap;overflow:hidden}
+.sw{border-radius:30px;padding:26px 20px;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end}
+.sw b{font-size:17px;font-weight:800}.sw small{font-size:12px;opacity:.75;direction:ltr;text-align:right;font-family:Peyda,sans-serif}
+.manifest{font-weight:900;font-size:clamp(34px,6vw,76px);line-height:1.5}
+.manifest span{display:inline-block;background:#fff;color:var(--n);border-radius:22px;padding:0 20px;transform:rotate(-1.4deg)}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.tags span{background:var(--n);color:#fff;padding:8px 22px;border-radius:99px;font-weight:700;font-size:15px}
+.appicon{width:min(280px,70%);aspect-ratio:1;border-radius:26%;background:var(--n);display:grid;place-items:center;transform:rotate(-2deg);box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.appicon svg{width:56%}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+/* typography */
+.tp{font-size:clamp(22px,3vw,36px);font-weight:800;line-height:1.7}
+.latin{direction:ltr;text-align:right;font-family:Peyda,sans-serif;font-weight:500;opacity:.8}
+.f-meem{font-family:Meem,Peyda,sans-serif}
+.f-abar{font-family:Abar,Meem,sans-serif}
+.f-irx{font-family:IRANSansX,Meem,sans-serif}
+.f-peyda{font-family:Peyda,Meem,sans-serif}
+.f-pelak{font-family:Pelak,Meem,sans-serif}
+.f-leila{font-family:Leila,Meem,sans-serif}
+.f-dabir{font-family:Dabir,Meem,serif}
+.fname{font-size:26px;font-weight:900;font-family:Peyda,sans-serif;direction:ltr;text-align:right;margin-bottom:6px}
+table{width:100%;border-collapse:collapse}
+th{color:var(--o);font-weight:700;text-align:right;font-size:14px;padding:8px}
+td{padding:10px 8px;border-top:1px solid rgba(128,128,160,.25);font-size:14px}
+/* logo */
+.lg{border-radius:34px;padding:34px 16px 20px;text-align:center;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;font-size:13px}
+.lg svg{width:112px;height:auto}
+.lg i{display:block;font-style:normal;letter-spacing:.5em;font-size:11px;font-family:Peyda,sans-serif;margin-top:4px}
+/* icons */
+.ic{border-radius:30px;padding:24px 8px 16px;text-align:center;font-weight:800;font-size:14px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.ic svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.hl{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-around;padding:36px;border-radius:44px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);margin-bottom:18px}
+.hl div{text-align:center;font-size:14px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:10px}
+.hl b{width:92px;height:92px;border-radius:50%;background:#050B2B;border:5px solid rgba(29,50,166,.6);display:grid;place-items:center;color:#fff;box-shadow:0 0 30px rgba(29,50,166,.5)}
+.hl svg{width:38px;height:38px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-radius:44px;overflow:hidden;background:var(--n);position:relative;min-height:520px}
+.team figure{position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.team figure:before{content:"";position:absolute;left:50%;bottom:4%;width:86%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:linear-gradient(180deg,#FF6F1F 0%,#FF6F1F 30%,#1D32A6 75%,#0B1646 100%)}
+.team img{position:relative;width:92%;display:block}
+.team figure:after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(transparent,rgba(11,22,70,.95))}
+.team figcaption{position:absolute;z-index:2;bottom:22px;left:0;right:0;text-align:center;color:#fff;font-weight:900;font-size:22px;text-shadow:0 2px 14px rgba(11,22,70,.9),0 0 30px rgba(11,22,70,.8)}
+/* gallery */
+.gal{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+.gal.two{grid-template-columns:repeat(2,1fr)}
+.gal button{border:0;background:none;padding:0;cursor:zoom-in;border-radius:22px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.22);display:block}
+.gal img{width:100%;display:block;transition:transform .35s}
+.gal button:hover img{transform:scale(1.03)}
+.sub{font-weight:800;font-size:20px;margin:34px 0 14px;display:flex;align-items:center;gap:10px}
+.sub:before{content:"";width:28px;height:6px;border-radius:9px;background:var(--o)}
+#lb{position:fixed;inset:0;background:rgba(5,11,43,.94);display:none;place-items:center;z-index:99;padding:20px;cursor:zoom-out}
+#lb.on{display:grid}#lb img{max-width:100%;max-height:92vh;border-radius:14px}
+/* final */
+.final{min-height:80vh;display:grid;align-items:center;text-align:center}
+.final h2{font-size:clamp(38px,7vw,92px)}
+.hand{font-family:Leila,Meem,cursive;font-weight:700}
+.poem{font-family:Dabir,Meem,serif;font-size:clamp(24px,4vw,46px);line-height:2.1;margin:20px 0}
+.credit{font-size:14px;opacity:.75;margin-top:22px}
+footer{background:#060C2E;color:#fff;padding:30px 0;text-align:center;font-size:13px;opacity:.95}
+footer span{font-family:Peyda,sans-serif;opacity:.7}
+.sw6{grid-template-columns:repeat(6,1fr)}.ic7{grid-template-columns:repeat(7,1fr);gap:12px;margin-top:26px}.g57{grid-template-columns:5fr 7fr;align-items:start}.g75{grid-template-columns:7fr 5fr}.card{min-width:0}.grid>*{min-width:0}
+@media(max-width:900px){.sw6{grid-template-columns:repeat(3,1fr)}.ic7{grid-template-columns:repeat(4,1fr)}.g57,.g75{grid-template-columns:1fr}.g4,.g3{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.gal{grid-template-columns:repeat(2,1fr)}.toc{display:none}}
+@media(max-width:600px){.sw6{grid-template-columns:repeat(2,1fr)}.ic7{grid-template-columns:repeat(3,1fr)}.hl{padding:20px}table{font-size:12px}th,td{padding:8px 4px}.top b{font-size:13px}section{padding:48px 0}.g2,.g3,.g4{grid-template-columns:1fr}.g4.ico,.g3.ico{grid-template-columns:repeat(2,1fr)}.card{padding:24px;border-radius:30px}.gal,.gal.two{grid-template-columns:1fr}.team{min-height:0}.team figcaption{font-size:14px;bottom:10px}.bar{font-size:11px;height:46px}.bar div{padding:0 10px}.big{font-size:34px}}
+
+/* ===== landing: liquid glass + motion (hero only) ===== */
+.hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 0,#1D32A6 0,#0B1646 55%,#060C2E 100%)}
+.hero:before{content:"";position:absolute;inset:0;background:url(assets/cover-hero.webp) center/cover;opacity:.22;mix-blend-mode:luminosity;animation:kb 26s ease-in-out infinite alternate}
+.hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding-top:40px;padding-bottom:40px}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75;will-change:transform}
+.o1{width:46vmax;height:46vmax;background:#FF6F1F;top:-18vmax;left:-12vmax;animation:fl1 16s ease-in-out infinite alternate}
+.o2{width:40vmax;height:40vmax;background:#1D32A6;bottom:-16vmax;right:-8vmax;animation:fl2 19s ease-in-out infinite alternate}
+.o3{width:22vmax;height:22vmax;background:#B9C4FF;top:30%;right:20%;opacity:.28;animation:fl1 22s ease-in-out infinite alternate-reverse}
+.glass{position:relative;color:#fff;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,.06));backdrop-filter:blur(22px) saturate(1.8);-webkit-backdrop-filter:blur(22px) saturate(1.8);border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.08),0 18px 50px rgba(5,11,43,.35);overflow:hidden}
+.glass:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);animation:shine 6s ease-in-out infinite}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:6px 20px;border-radius:99px;font-size:14px;font-weight:700}
+.hero-badge i{width:9px;height:9px;border-radius:50%;background:var(--o);box-shadow:0 0 0 0 rgba(255,111,31,.7);animation:pulse 2.4s infinite}
+.logo-glass{width:132px;height:132px;border-radius:38px;display:grid;place-items:center;margin:26px 0 22px;animation:bob 6s ease-in-out infinite}
+.logo-glass svg{width:56%;height:56%}
+.hero h1{text-shadow:0 8px 40px rgba(5,11,43,.5)}
+.hero .chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+.chips span{padding:6px 20px;border-radius:99px;font-weight:700;font-size:14px}
+.cta{margin-top:34px;padding:12px 34px;border-radius:99px;font-weight:800;display:inline-flex;gap:10px;align-items:center;transition:transform .35s cubic-bezier(.2,.9,.3,1.3)}
+.cta:hover{transform:translateY(-3px) scale(1.04)}
+.cta b{animation:nudge 1.8s ease-in-out infinite}
+.fl{position:absolute;padding:12px 20px;border-radius:26px;font-weight:800;font-size:14px;display:flex;flex-direction:column;line-height:1.5}
+.fl small{font-family:Peyda,sans-serif;font-size:22px;font-weight:900;color:var(--o)}
+.f1{top:22%;right:5%;animation:bob 7s ease-in-out infinite}
+.f2{bottom:20%;left:6%;animation:bob 8s ease-in-out -2s infinite}
+.f3{top:30%;left:9%;animation:bob 9s ease-in-out -4s infinite}
+.rv{opacity:0;transform:translateY(26px) scale(.98);filter:blur(8px);animation:rv 1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--d,0s)}
+.top{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(11,22,70,.78));backdrop-filter:blur(22px) saturate(1.8);-webkit-backdrop-filter:blur(22px) saturate(1.8);border-bottom:1px solid rgba(255,255,255,.2);box-shadow:inset 0 -1px 0 rgba(255,255,255,.1)}
+@keyframes rv{to{opacity:1;transform:none;filter:none}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(1.5deg)}}
+@keyframes fl1{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+@keyframes fl2{to{transform:translate(-7vmax,-6vmax) scale(1.1)}}
+@keyframes kb{to{transform:scale(1.12)}}
+@keyframes shine{0%,60%{left:-60%}100%{left:140%}}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,111,31,0)}100%{box-shadow:0 0 0 0 rgba(255,111,31,0)}}
+@keyframes nudge{50%{transform:translateY(4px)}}
+@media(max-width:700px){.fl{display:none}.logo-glass{width:104px;height:104px}}
+@media(prefers-reduced-motion:reduce){.rv,.orb,.glass,.glass:after,.hero:before,.logo-glass,.fl,.cta b{animation:none!important}.rv{opacity:1;transform:none;filter:none}}
+
+/* ===== liquid glass: whole brand page ===== */
+section:not(.hero){overflow:hidden;isolation:isolate}
+section:not(.hero):before,section:not(.hero):after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(90px);pointer-events:none;will-change:transform}
+section:not(.hero):before{width:44vmax;height:44vmax;top:-14vmax;right:-10vmax;background:#FF6F1F;opacity:.20;animation:fl1 24s ease-in-out infinite alternate}
+section:not(.hero):after{width:40vmax;height:40vmax;bottom:-16vmax;left:-10vmax;background:#1D32A6;opacity:.22;animation:fl2 28s ease-in-out infinite alternate}
+section.dark:before{opacity:.38}section.navy:before{opacity:.35}section.orange:after{background:#FFE3D1;opacity:.5}
+.card,.sw,.lg,.ic,.hl,.bar div,.team,.gal button{--mx:50%;--my:0%}
+.card{backdrop-filter:blur(20px) saturate(1.7);-webkit-backdrop-filter:blur(20px) saturate(1.7);border:1px solid rgba(255,255,255,.55);background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(255,255,255,.42));box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.3),0 22px 60px rgba(29,50,166,.16);overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.card.n{background:linear-gradient(145deg,rgba(24,40,120,.88),rgba(11,22,70,.82));border-color:rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 24px 60px rgba(5,11,43,.4)}
+.card.o{background:linear-gradient(145deg,rgba(255,150,80,.95),rgba(255,111,31,.86));border-color:rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 24px 60px rgba(255,111,31,.32)}
+.card.p{background:linear-gradient(145deg,rgba(255,240,230,.9),rgba(255,227,209,.7))}
+.card.r{background:linear-gradient(145deg,rgba(60,85,215,.9),rgba(29,50,166,.85));border-color:rgba(255,255,255,.3)}
+.card.g{background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.05));border-color:rgba(255,255,255,.26);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 20px 50px rgba(5,11,43,.35)}
+.card:before,.sw:before,.lg:before,.ic:before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(255,255,255,.34),transparent 55%);opacity:0;transition:opacity .4s}
+.card:hover:before,.sw:hover:before,.lg:hover:before,.ic:hover:before{opacity:1}
+.card:hover,.sw:hover,.lg:hover,.ic:hover{transform:translateY(-6px)}
+.card.o[style*="rotate"]:hover{transform:rotate(3deg) translateY(-6px)}
+.card:after{content:"";position:absolute;top:0;left:-70%;width:35%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-18deg);transition:left 1s;pointer-events:none}
+.card:hover:after{left:150%}
+.sw,.lg,.ic{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 18px 40px rgba(11,22,70,.18);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.sw:after,.ic:after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,rgba(255,255,255,.28),transparent 45%);pointer-events:none}
+.lg{background-image:linear-gradient(160deg,rgba(255,255,255,.12),transparent 50%)}
+.hl{backdrop-filter:blur(22px) saturate(1.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 24px 60px rgba(5,11,43,.4)}
+.hl b{transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;background:radial-gradient(circle at 30% 25%,#1a2b86,#050B2B 70%)}
+.hl div:hover b{transform:translateY(-8px) scale(1.07);box-shadow:0 0 50px rgba(255,111,31,.55)}
+.bar{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 14px 36px rgba(11,22,70,.2)}
+.team{box-shadow:0 30px 80px rgba(5,11,43,.5),inset 0 1px 0 rgba(255,255,255,.3)}
+.team figcaption{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.5);width:max-content;margin:0 auto;padding:2px 26px;border-radius:99px;left:50%;right:auto;transform:translateX(-50%)}
+.team img{transition:transform .8s cubic-bezier(.2,.8,.2,1)}.team figure:hover img{transform:translateY(-8px) scale(1.03)}
+.gal button{border:1px solid rgba(255,255,255,.35);padding:6px;background:rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:28px;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 18px 44px rgba(5,11,43,.3);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.gal button:hover{transform:translateY(-6px)}
+.gal img{border-radius:22px}
+.pill{box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 16px rgba(255,111,31,.3)}
+.pill.n{box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 6px 16px rgba(11,22,70,.3)}
+.tags span{backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 10px 24px rgba(11,22,70,.3);transition:transform .4s}.tags span:hover{transform:translateY(-4px)}
+.appicon{box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 40px 80px rgba(11,22,70,.45);animation:bob 7s ease-in-out infinite}
+#lb{backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px)}
+/* scroll reveal */
+.sr{opacity:0;transform:translateY(36px) scale(.97);filter:blur(10px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),filter .9s;transition-delay:var(--sd,0s)}
+.sr.in{opacity:1;transform:none;filter:none}
+.sr.in.card:hover,.sr.in.sw:hover,.sr.in.ic:hover,.sr.in.lg:hover{transform:translateY(-6px)}
+@media(max-width:600px){section:not(.hero):before,section:not(.hero):after{filter:blur(60px)}}
+@media(prefers-reduced-motion:reduce){.sr{opacity:1;transform:none;filter:none;transition:none}section:not(.hero):before,section:not(.hero):after,.appicon{animation:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="nlogo" viewBox="0 0 428 493"><g fill="currentColor"><path d="M76.7 389.7L90.0 375.7L97.3 369.7L104.7 365.0L113.0 360.7L123.3 356.7L140.7 352.7L156.7 352.0L177.0 355.0L196.0 361.0L229.0 374.7L239.7 377.7L251.0 379.3L262.3 379.3L275.3 376.7L282.3 373.3L287.7 369.7L295.0 361.7L279.0 364.0L259.3 363.0L243.7 359.0L233.0 355.0L203.0 340.0L184.3 333.0L163.0 329.0L150.0 329.0L141.3 330.0L129.0 333.0L117.0 338.0L104.3 346.0L97.3 352.0L92.0 357.7L84.0 368.7L79.0 379.7Z"/><path d="M348.0 0.0L347.0 0.0L268.0 83.7L268.3 84.3L310.0 84.3L311.0 85.0L310.7 269.3L131.3 90.0L127.7 89.3L77.0 89.7L77.0 356.0L90.0 341.7L105.0 329.7L123.3 320.7L129.7 318.7L142.0 316.7L143.7 315.7L143.7 197.3L144.3 197.0L330.7 383.7L382.0 384.0L382.7 383.3L382.7 85.7L384.0 84.3L427.7 84.3L427.7 83.3Z"/><path d="M98.7 428.0L98.3 464.0L99.0 464.7L103.7 464.7L104.7 463.7L104.7 440.3L105.3 439.7L124.0 463.7L125.3 464.7L129.7 464.3L130.0 428.3L129.3 427.7L124.0 428.0L124.0 452.0L123.3 452.7L104.7 428.0Z"/><path d="M99.3 390.0L100.7 390.3L119.7 384.7L133.0 382.7L154.0 382.3L175.7 384.7L213.7 392.7L223.0 393.7L237.3 393.7L245.0 392.3L234.0 390.0L219.7 385.7L197.0 376.0L182.7 371.0L175.0 369.0L159.7 367.0L152.3 367.0L138.3 369.0L126.0 373.0L110.7 381.0Z"/><path d="M190.0 427.0L183.0 428.7L179.0 431.0L176.0 434.0L173.0 440.0L172.3 449.0L174.3 455.7L178.3 460.7L183.0 463.7L192.3 465.0L198.7 463.7L205.7 458.3L208.7 453.0L209.7 449.0L209.7 443.0L207.7 437.0L202.3 430.7L196.0 427.7Z M189.0 433.0L193.0 433.0L198.0 435.0L200.7 437.7L202.7 443.3L202.7 447.7L201.0 453.7L197.3 457.3L194.0 459.0L188.0 459.0L184.3 457.3L180.7 453.3L179.3 449.0L179.3 443.0L180.7 439.0L184.7 434.7Z"/><path d="M251.7 428.3L251.7 464.0L252.3 464.7L257.0 464.7L257.7 464.0L257.7 440.0L258.3 439.3L269.0 458.3L270.7 460.0L273.3 460.0L274.7 459.0L284.0 441.3L286.0 439.3L286.3 464.0L287.0 464.7L292.0 464.3L292.3 428.7L291.7 427.7L285.0 428.0L272.3 451.0L269.7 448.0L259.7 428.7L258.3 427.7L252.3 427.7Z"/><path d="M347.0 428.0L332.3 464.0L333.0 464.7L339.0 464.3L343.0 455.7L358.0 455.7L362.0 464.3L368.0 464.3L368.3 463.0L354.3 428.0Z M350.3 436.0L352.0 437.7L356.0 448.3L356.0 450.0L355.0 450.7L346.0 450.7L345.0 449.7Z"/></g></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+<symbol id="i-seven" viewBox="0 0 24 24"><path d="M6 5h12l-7 14"/></symbol>
+<symbol id="i-board" viewBox="0 0 24 24"><path d="M3 4h18M5 4v10h14V4M12 14v3M8 21l4-4 4 4"/></symbol>
+<symbol id="i-team" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.5"/><circle cx="5.5" cy="9" r="2"/><circle cx="18.5" cy="9" r="2"/><path d="M7 20c0-3 2.2-5 5-5s5 2 5 5M2.5 16c.3-2 1.6-3.2 3-3.4M21.5 16c-.3-2-1.6-3.2-3-3.4"/></symbol>
+<symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-1 .7-1.5 1.2-1.5 2.5M12 17v.1"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></symbol>
+<symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></symbol>
+<symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9c-.4-1-1.4-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1.1 0-2.100-.5-2.500-1.500M12 6v1.500M12 16.500V18"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V4M6 10l6-6 6 6"/></symbol>
+<symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 8c3-3 5 3 9 0s6 3 9 0M3 13c3-3 5 3 9 0s6 3 9 0M3 18c3-3 5 3 9 0s6 3 9 0"/></symbol>
+<symbol id="i-brush" viewBox="0 0 24 24"><path d="M18 3l3 3-9 9-3-3zM9 12c-3 0-4 2-4 4s-1 3-2 4c3 1 7 0 8-3 .6-1.700 0-3.300-2-5z"/></symbol>
+</defs></svg>
+
+<header class="top"><div class="wrap">
+<a class="back" href="index.html">← نوما</a>
+<nav class="toc">
+<a href="#s1">منشور</a><a href="#s2">آرکتایپ</a><a href="#s3">مخاطب</a><a href="#s4">رنگ</a><a href="#s5">فونت</a><a href="#s6">لوگو</a><a href="#s7">آیکون</a><a href="#s8">تیم</a><a href="#s9">هایلایت</a><a href="#s10">پست‌ها</a><a href="#s11">ریلز</a>
+</nav>
+<b>هویت بصری جدید نوما</b>
+</div></header>
+
+<section class="hero" id="top"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+<div class="wrap hero-in">
+<div class="glass hero-badge rv" style="--d:.05s"><i></i>آرکتایپ برند · نسخه ۱۴۰۵</div>
+<div class="glass logo-glass rv" style="--d:.15s"><svg><use href="#nlogo"/></svg></div>
+<h1 class="rv" style="--d:.28s">هویت بصری <em>جدید</em> نوما</h1>
+<p class="rv" style="--d:.4s">مسیرت رو با تجربه کردن بساز، نه با حدس زدن.</p>
+<div class="chips rv" style="--d:.52s"><span class="glass">رنگ</span><span class="glass">فونت</span><span class="glass">لوگو</span><span class="glass">آیکون</span><span class="glass">پست و ریلز</span></div>
+<a href="#s1" class="glass cta rv" style="--d:.64s">شروع کن <b>↓</b></a>
+<div class="glass fl f1"><small>۶۰٪</small>سورمه‌ای شب</div>
+<div class="glass fl f2"><small>۳۰٪</small>نارنجی نوما</div>
+<div class="glass fl f3"><small>Aa</small>Meem</div>
+</div></section>
+
+<section class="orange" id="s1"><div class="wrap split">
+<div>
+<div class="eye">۰ مانیفست</div>
+<div class="manifest">مسیرت رو با <span>تجربه کردن</span> بساز، نه با حدس زدن.</div>
+<div class="tags"><span>یاد می‌گیری</span><span>تجربه می‌کنی</span><span>مسیرت رو کشف می‌کنی</span></div>
+</div>
+<div style="display:grid;place-items:center"><div class="appicon" style="color:#F6F7FF"><svg><use href="#nlogo"/></svg></div></div>
+</div></section>
+
+<section id="s2"><div class="wrap">
+<div class="eye">۱ هدف برند</div>
+<h2>نوما برای چی <em>ساخته</em> شده؟</h2>
+<p class="lead">هرچیزی که برای ساختن مسیر حرفه‌ای خودت نیاز داری:</p>
+<div class="card n hand" style="border-radius:44px;font-size:clamp(20px,3vw,32px);padding:26px 34px;margin-bottom:18px;font-weight:400"><small style="opacity:.4;display:block;font-size:15px">— مولانا</small>لازم نیست از همین امروز ته مسیر رو ببینی، فقط کافیه اولین قدم واقعی رو برداری.</div>
+<div class="grid g3">
+<div class="card n"><div class="big">۱</div><h3>یادمی‌گیری</h3><p>خودت رو بهتر می‌شناسی، مسیر شغلی‌ت رو پیدا می‌کنی و قدم به قدم وارد دنیای کارمی‌شی.</p></div>
+<div class="card o"><div class="big">۲</div><h3>تجربه می‌کنی</h3><p>از خودشناسی و کشف مسیر شغلی تا رزومه‌نویسی، کارآموزی و ورود به دنیای کار آموزش می‌بینی و تمرین می‌کنی.</p></div>
+<div class="card"><div class="big">۳</div><h3>مسیرت رو کشف می‌کنی</h3><p>با تجربه‌های واقعی، وبینارها و همراهی مشاورها و کامیونیتی، مسیر مناسب خودت رو پیدا کن.</p></div>
+</div></div></section>
+
+<section class="dark"><div class="wrap">
+<div class="eye">چرا نوما؟</div>
+<h2>چرا <em>نوما؟</em></h2>
+<div class="grid g4" style="margin-top:30px">
+<div class="card"><svg class="ico" width="40" height="40" style="fill:none;stroke:#1D32A6;stroke-width:1.7"><use href="#i-board"/></svg><h3 style="margin-top:80px">ویدیوهای آموزشی</h3><p>محتوای تخصصی و کاربردی در قالب ویدیوهای کوتاه آموزشی و حرفه‌ای</p></div>
+<div class="card o"><svg width="40" height="40" style="fill:none;stroke:#0B1646;stroke-width:1.7"><use href="#i-mic"/></svg><h3 style="margin-top:80px">وبینارهای ماهانه</h3><p>جلسات زنده با متخصصین و امکان پرسش و پاسخ</p></div>
+<div class="card n" style="border:1px solid rgba(255,255,255,.12)"><svg width="40" height="40" style="fill:none;stroke:#FF6F1F;stroke-width:1.7"><use href="#i-team"/></svg><h3 style="margin-top:80px">منتور و کامیونیتی</h3><p>همراهی منتورها و ارتباط با نوجوان‌های هم‌مسیر</p></div>
+<div class="card"><svg width="40" height="40" style="fill:none;stroke:#1D32A6;stroke-width:1.7"><use href="#i-compass"/></svg><h3 style="margin-top:80px">تجربهٔ عملی</h3><p>تجربه‌های واقعی، پروژه‌های کوتاه‌مدت و بازخورد</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="eye">۲ آرکتایپ برند</div>
+<h2>حکیمِ راهنما، با تهٔ‌مایهٔ <em>قهرمان</em></h2>
+<p class="lead">آرکتایپ، شخصیت برند است: نوما چطور حرف می‌زند، چه نشان می‌دهد و چه چیزی را هرگز نمی‌گوید.</p>
+<div class="bar"><div style="flex:6;background:var(--n);color:#fff">حکیم · سورمه‌ای ۶۰٪</div><div style="flex:3;background:var(--o);color:var(--n)">قهرمان · نارنجی ۳۰٪</div><div style="flex:1;background:#fff;border:1px solid #dde;color:var(--r)">۱۰٪</div></div>
+<div class="grid g3">
+<div class="card n"><span class="pill">حکیم — سورمه‌ای</span><div class="big">۶۰٪</div><h3>راهنما، نه سخنران</h3><p>دانش واقعی، سیستم و عدد؛ آرام، دقیق، بی‌اغراق. جواب آماده نمی‌فروشد، راه فهمیدن را نشان می‌دهد.</p>
+<div class="row"><b>محتوا</b><span>سیستم، تجربهٔ واقعی، سؤال درست</span></div><div class="row"><b>لحن</b><span>آرام، صریح، مطمئن</span></div><div class="row"><b>نماد</b><span>چراغ، نقشه، میکروفون</span></div></div>
+<div class="card o"><span class="pill n">قهرمان — نارنجی</span><div class="big">۳۰٪</div><h3>سخت‌کوشی، نه نمایش</h3><p>انضباط و چالش بدون فریاد و بدون وعدهٔ نتیجه سریع.</p>
+<div class="row"><b>محتوا</b><span>چالش، عادت روزانه، ادامه دادن</span></div><div class="row"><b>لحن</b><span>مستقیم، انگیزه‌بخش، صادق</span></div><div class="row"><b>نماد</b><span>تایمر، چک‌لیست، قدم اول</span></div></div>
+<div class="card"><span class="pill p">تأکیدی — سفید</span><div class="big">۱۰٪</div><h3>نفس و تأکید</h3><p>فضای خالی، متن اصلی و جزئیات کلیدی؛ جایی که چشم باید بایستد.</p></div>
+</div>
+<div class="card n" style="border-radius:99px;margin-top:18px;padding:18px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap"><span class="pill" style="margin:0">قول برند</span><span>«مسیرت رو با تجربه کردن بساز، نه با حدس زدن.»</span></div>
+</div></section>
+
+<section class="" id="s3"><div class="wrap">
+<div class="eye">۳ مخاطب</div>
+<h2>مخاطب نوما یک <em>کاشف</em> است</h2>
+<p class="lead">نوجوان ۱۵ تا ۲۰ ساله که هنوز مسیرش را پیدا نکرده و «تجربهٔ واقعی قبل از انتخاب» می‌خواهد.</p>
+<div class="grid g2">
+<div class="card n"><span class="pill">کاشف — آرکتایپ مخاطب</span><h3>کنجکاو، در جست‌وجوی مسیر</h3><p>از «یک جواب آماده» خسته است؛ می‌خواهد امتحان کند، ببیند، بعد انتخاب کند.</p>
+<div class="row"><b>دغدغه</b><span>«کدوم مسیر مال منه؟»</span></div><div class="row"><b>ترس</b><span>انتخاب اشتباه و هدررفتن وقت</span></div><div class="row"><b>می‌خواهد</b><span>تجربهٔ واقعی، نه نصیحت</span></div></div>
+<div class="card p"><span class="pill n">آدم معمولی — ته‌مایه</span><h3>تعلق، نه تنهایی</h3><p>کاشف نمی‌خواهد تنها بگردد. وبینار، کامیونیتی و هم‌مسیرها می‌گویند «بقیه هم همین سؤال را دارند».</p>
+<div class="row"><b>جمع</b><span>وبینار، دورهمی، چالش گروهی</span></div><div class="row"><b>لحن</b><span>صمیمی، هم‌مسیر، بدون فاصله</span></div><div class="row"><b>نماد</b><span>دورهمی، گفت‌وگو</span></div></div>
+</div>
+<div class="grid g3" style="margin-top:18px">
+<div class="card" style="border-radius:99px;padding:18px 26px;display:flex;gap:12px;align-items:center"><svg width="26" height="26" style="fill:none;stroke:#1D32A6;stroke-width:1.7"><use href="#i-bulb"/></svg><span><b>حکیم</b> راه را نشان می‌دهد</span></div>
+<div class="card" style="border-radius:99px;padding:18px 26px;display:flex;gap:12px;align-items:center"><svg width="26" height="26" style="fill:none;stroke:#FF6F1F;stroke-width:1.7"><use href="#i-up"/></svg><span><b>قهرمان</b> کنار کاشف قدم می‌زند</span></div>
+<div class="card o" style="border-radius:99px;padding:18px 26px;display:flex;gap:12px;align-items:center"><svg width="26" height="26" style="fill:none;stroke:#0B1646;stroke-width:1.7"><use href="#i-compass"/></svg><span><b>کاشف</b> انتخاب می‌کند</span></div>
+</div></div></section>
+
+<section class="dark"><div class="wrap">
+<div class="eye">۴ چه نیستیم</div>
+<h2>دو آرکتایپ <em>ممنوع</em></h2>
+<div class="grid g2" style="margin-top:28px">
+<div class="card g"><span class="pill">جادوگر — ممنوع</span><h3>قانون جذب و رؤیافروشی</h3><p>«فقط بخواه تا بشود»؛ وعدهٔ نتیجه بدون سیستم.</p><ul class="dots"><li>وعدهٔ نتیجهٔ سریع و تضمینی</li><li>جملهٔ رؤیایی بدون قدم عملی</li><li>گرادیان براق و فضای «جادویی»</li></ul></div>
+<div class="card g"><span class="pill">حاکم — ممنوع</span><h3>نمایش لوکس و قدرت</h3><p>«من موفقم، تو هم باش»؛ ماشین و دفتر لوکس، فاصله.</p><ul class="dots"><li>نمایش ثروت به‌جای سیستم</li><li>لحن بالا به پایین</li><li>طلایی، مشکی براق، فضای اشرافی</li></ul></div>
+<div class="card o"><h3>سواد مالی و جادوگر</h3><p>چون سواد مالی ستون محتوای نوماست، باید «سیستم و عادت» باشد (بودجهٔ هفتگی، تفاوت هزینه و دارایی)، نه وعدهٔ ثروت. هر کاور مالی از فیلتر بالا رد شود.</p></div>
+<div class="card"><h3>فیلتر محتوایی</h3><p>فقط انضباط واقعی و خاص وارد پیچ می‌شود. هر ایده قبل از ساخت می‌پرسد: «این یک سیستم قابل انجام است یا فقط یک جملهٔ قشنگ؟» اگر دومی است، ساخته نمی‌شود.</p></div>
+</div></div></section>
+
+<section id="s4"><div class="wrap">
+<div class="eye">۵ رنگ</div>
+<h2>همان سه رنگ، <em>پرانرژی‌تر</em></h2>
+<p class="lead">سورمه‌ای، نارنجی، سفید می‌مانند؛ فقط تیرگیِ سنگین کم شد و رنگ‌مایه بیشتر. نتیجه: جدی، ولی با حال‌وهوای ۱۵ تا ۲۰ سالگی.</p>
+<div class="grid sw6">
+<div class="sw" style="background:#FF6F1F"><b>نارنجی نوما</b><small>Tangerine · #FF6F1F</small></div>
+<div class="sw" style="background:#0B1646;color:#fff"><b>سورمه‌ای شب</b><small>Midnight · #0B1646</small></div>
+<div class="sw" style="background:#1D32A6;color:#fff"><b>سورمه‌ای روشن</b><small>Royal · #1D32A6</small></div>
+<div class="sw" style="background:#F6F7FF;border:1px solid #dde"><b>سفید ابری</b><small>Cloud · #F6F7FF</small></div>
+<div class="sw" style="background:#FFE3D1"><b>هلویی</b><small>Peach · #FFE3D1</small></div>
+<div class="sw" style="background:#B9C4FF"><b>آبیِ مه</b><small>Periwinkle · #B9C4FF</small></div>
+</div>
+<div class="bar" style="margin-top:20px"><div style="flex:6;background:var(--n);color:#fff">سورمه‌ای ۶۰٪ · عمق و اعتماد</div><div style="flex:3;background:var(--o);color:var(--n)">نارنجی ۳۰٪ · انرژی</div><div style="flex:1;background:#fff;border:1px solid #dde;color:var(--r)">۱۰٪</div></div>
+<div class="grid g2">
+<div class="card"><h3>قوانین رنگ</h3><ul class="dots"><li>هر کاور یک «قهرمان رنگی» دارد: نارنجی یا پس‌زمینه یا اکسنت؛ هیچ‌وقت هردو.</li><li>روی نارنجی، متن همیشه سورمه‌ای است (خوانایی). متن دوم آبیِ مه است، نه خاکستری.</li><li>گرادیان‌های نرم «شفق‌مانند» آزاد؛ گرادیان تند و براق ممنوع.</li></ul></div>
+<div class="card n"><h3>قبل ← بعد</h3><div style="display:flex;gap:14px;align-items:center;margin:20px 0"><i style="width:40px;height:40px;border-radius:50%;background:#000C26"></i><span>→</span><i style="width:40px;height:40px;border-radius:50%;background:#FF6F1F"></i><span>→</span><i style="width:40px;height:40px;border-radius:50%;background:#B9C4FF"></i></div><p>سیاه‌نمای #000C26 جایش را به سورمه‌ای زندهٔ #0B1646 داد.</p></div>
+</div></div></section>
+
+<section class="dark"><div class="wrap">
+<div class="eye">۶ شکل و حرکت</div>
+<h2>گِرد، نرم، <em>بازیگوش</em></h2>
+<p class="lead">مینیمال در چیدمان، ماکسیمال در رنگ و اندازه: فضای خالی زیاد، ولی هرچیزی که هست درشت و پرانرژی.</p>
+<div class="grid g3" style="align-items:stretch">
+<div class="grid" style="gap:18px"><div class="card g"><span class="pill">پیل — کاملاً گرد</span><p>دکمه، تگ، برچسب</p></div><div class="card" style="border-radius:34px"><h3>کارت — شعاع ۵۶ تا ۶۴</h3><p>سطح اصلی، با سایهٔ رنگیِ نرم</p></div></div>
+<div class="card o" style="transform:rotate(3deg);text-align:center;display:grid;place-items:center"><div><svg width="110" height="120" style="color:#0B1646"><use href="#nlogo"/></svg><h3>استیکر</h3><p>یک عنصر کج (۳ تا ۴ درجه) در هر کادر؛ حس «چسباندنِ دستی».</p></div></div>
+<div class="card g"><h3>قواعد</h3><ul class="dots"><li>فضای خالی زیاد؛ متن به لبه نمی‌چسبد.</li><li>یک عنصر درشت‌شده (عدد، حرف یا شکل) در هر کادر، تا ۴۰٪ ارتفاع.</li><li>سایه فقط محو، بلند و رنگی؛ سیاه و سخت ممنوع.</li><li>عکس واقعی (کارگاه، کافه، خیابان) با یک عنصر سرمه‌ای/نارنجی.</li><li>حرکت فنری و شاد: جهش کوچک، بازگشت نرم؛ نه تند و شلوغ.</li></ul></div>
+</div></div></section>
+
+<section id="s5"><div class="wrap">
+<div class="eye">۷ فونت</div>
+<h2>شش فونت، دو <em>نقش اصلی</em></h2>
+<div class="grid g2" style="margin-top:26px">
+<div class="card n"><span class="pill">اصلی ۱ — فونت اصلی برند</span><div class="fname">Meem</div><div class="tp f-meem" style="font-weight:900">مسیرت رو با <em style="font-style:normal;color:var(--o)">تجربه کردن</em> بساز، نه با حدس زدن.</div><div class="latin" style="color:var(--w)">NOMA Career Path 1405</div>
+<div class="row f-meem" style="font-weight:400;font-size:20px;margin-top:20px"><small style="font-size:12px;opacity:.6">Regular · متن بلند و کپشن</small>مسیرت رو با تجربه کردن بساز</div>
+<div class="row f-meem" style="font-weight:900;font-size:20px"><small style="font-size:12px;opacity:.6;font-weight:400">Black · هوک کاور و تیتر</small>مسیرت رو با تجربه کردن بساز</div>
+<div class="row f-meem" style="font-weight:700;font-size:20px"><small style="font-size:12px;opacity:.6;font-weight:400">Bold · جملهٔ تصمیم و نقل‌قول</small>مسیرت رو با تجربه کردن بساز</div></div>
+<div class="card o"><span class="pill n">اصلی ۲ — پیشنهاد</span><div class="fname f-irx" style="font-weight:800">IRANSans X Pro</div><div class="tp f-irx" style="font-weight:500">مسیرت رو با تجربه کردن بساز، نه با حدس زدن.</div><div class="latin f-irx">NOMA Career Path 1405</div>
+<div class="row f-irx" style="margin-top:20px;font-weight:300;font-size:18px"><small>سبک</small>۰۱۲۳۴۵۶۷۸۹</div><div class="row f-irx" style="font-weight:400;font-size:18px"><small>معمولی</small>۰۱۲۳۴۵۶۷۸۹</div><div class="row f-irx" style="font-weight:600;font-size:18px"><small>نیمه‌ضخیم</small>۰۱۲۳۴۵۶۷۸۹</div><div class="row f-irx" style="font-weight:800;font-size:18px"><small>سنگین</small>۰۱۲۳۴۵۶۷۸۹</div>
+<p style="margin-top:10px">کاربرد: متن اسلاید و کپشن، زیرنویس ریلز، رابط کاربری، عدد و آمار.</p></div>
+</div></div></section>
+
+<section class="dark"><div class="wrap">
+<div class="eye">۷ فونت — ادامه</div>
+<h2>چهار فونت <em>پشتیبان</em></h2>
+<div class="grid g4" style="margin-top:26px">
+<div class="card g"><span class="pill" style="background:rgba(255,255,255,.15);color:#fff">جایگزین — اصلی قبلی</span><div class="fname f-abar" style="font-weight:900">Abar Pro</div><div class="tp f-abar" style="font-size:24px;font-variation-settings:'CNTR' 50">مسیرت رو با تجربه کردن بساز</div><div class="latin f-abar" style="font-size:13px">NOMA Career Path 1405</div><p style="margin-top:14px">بعد از انتخاب، از فونت اصلی به جایگزین تغییر کرد. یک خانواده با سه شخصیت: Low، Mid و High.</p><p><b>کاربرد:</b> در صورت نیاز به حس نسخه‌گونه؛ جملهٔ تصمیم و نقل‌قول (High).</p></div>
+<div class="card g"><span class="pill" style="background:rgba(255,255,255,.15);color:#fff">فونت فعلی نوما</span><div class="fname f-peyda">Peyda</div><div class="tp f-peyda" style="font-size:24px">مسیرت رو با تجربه کردن بساز</div><div class="latin f-peyda" style="font-size:13px">NOMA Career Path 1405</div><p style="margin-top:14px">فونتی که همین الان در درسایت استفاده می‌شود؛ انتقال از آن به میم در دورهٔ گذار انجام می‌شود. سنس مدرن با حس شاد.</p><p><b>کاربرد:</b> تیتر و سایت فعلی و دورهٔ گذار.</p></div>
+<div class="card g"><span class="pill" style="background:rgba(255,255,255,.15);color:#fff">بررسی شد — پیشنهاد نمی‌شود</span><div class="fname f-pelak">Pelak</div><div class="tp f-pelak" style="font-size:24px">مسیرت رو با تجربه کردن بساز</div><div class="latin f-pelak" style="font-size:13px">NOMA Career Path 1405</div><p style="margin-top:14px">سنس هندسی و درست، ولی به Peyda و IRANSans X نزدیک است و چیزی تازه‌ای به هویت نمی‌افزاید.</p><p><b>کاربرد:</b> فقط جایگزین اضطراری.</p></div>
+<div class="card o"><span class="pill n">لهجهٔ دست‌نویس</span><div class="fname f-leila">Leila</div><div class="tp f-leila" style="font-size:32px">مسیرت رو با تجربه کردن بساز، نه با حدس زدن.</div><p style="margin-top:14px">دست‌نویس واقعی؛ حس «دوست هم‌مسیر» می‌دهد. فقط فارسی دارد، پس برای لاتین و عدد از آن استفاده نکن.</p><p><b>کاربرد:</b> یک عبارت کوتاه و صمیمی در هر کادر، مثل «فقط کافیه اولین قدم واقعی رو برداری».</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="eye">۷ سیستم فونت</div>
+<h2>چه فونتی، <em>کجا؟</em></h2>
+<p class="lead">تیتر، زیرتیتر و متن هرکدام یک وزن مشخص دارند؛ وزن سنگین فقط برای هوک کاور.</p>
+<div class="grid g57">
+<div class="grid"><div class="card n"><h3>قانون هماهنگی</h3><ul class="dots"><li>حداکثر ۲ وزن در هر کادر؛ هوک حداکثر ۷ کلمه.</li><li>تست انتخاب: «مسیرت رو با تجربه کردن بساز» کنار NOMA.</li></ul></div>
+<div class="card o"><h3>ممنوع</h3><p>دست‌نویس در تیتر، متن یا هوک؛ کودکانه می‌شود و اعتبار حکیم را می‌شکند.</p><p>سریف رسمی و بانکی؛ همان که نسخهٔ اول هویت داشت رد شد.</p></div></div>
+<div class="card" style="overflow-x:auto"><table><tr><th>جا</th><th>فونت</th><th>وزن</th></tr>
+<tr><td>هوک کاور ریلز و پست</td><td>Meem</td><td>ExtraBold</td></tr><tr><td>تیتر اسلاید</td><td>Meem</td><td>Bold</td></tr><tr><td>زیرتیتر</td><td>Meem</td><td>Medium</td></tr><tr><td>متن اسلاید و کپشن</td><td>Meem / IRANSans X</td><td>Light / Regular</td></tr><tr><td>خط فرعی و زیرنویس</td><td>IRANSans X</td><td>Regular، آبیِ مه</td></tr><tr><td>جملهٔ تصمیم و نقل‌قول</td><td>Meem</td><td>Bold</td></tr><tr><td>عدد، آمار، رابط وب</td><td>IRANSans X</td><td>Medium / Bold</td></tr><tr><td>لهجهٔ دوستانه</td><td>Leila</td><td>Black</td></tr></table></div>
+</div></div></section>
+
+<section class="dark" id="s6"><div class="wrap">
+<div class="eye">۸ لوگو</div>
+<h2>لوگو امضاست، <em>نه تیتر</em></h2>
+<div class="grid g4" style="margin-top:26px">
+<div class="lg" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff"><div><svg><use href="#nlogo"/></svg><i>NOMA</i></div>معکوس: یخی روی تیره</div>
+<div class="lg" style="background:#fff;color:var(--n)"><div><svg><use href="#nlogo"/></svg><i>NOMA</i></div>اصلی: جوهری روی روشن</div>
+<div class="lg" style="background:var(--o);color:var(--n)"><div><svg><use href="#nlogo"/></svg><i>NOMA</i></div>روی نارنجی: سورمه‌ای</div>
+<div class="lg" style="background:var(--r);color:#fff"><div><svg><use href="#nlogo"/></svg><i>NOMA</i></div>نشانهٔ N تنها — آواتار، استوری</div>
+</div>
+<div class="grid g3" style="margin-top:18px">
+<div class="card g"><h3>فضای خالی و اندازه</h3><ul class="dots"><li>فضای خالی: یک‌چهارم ارتفاع لوگو از هر طرف.</li><li>حداقل ۱۲۰ پیکسل؛ N تنها ۳۲ پیکسل.</li><li>در هر کادر حداکثر یک بار.</li></ul></div>
+<div class="card g"><h3>ممنوع</h3><ul class="dots"><li>تک‌رنگ نارنجی کردن؛ کشیدن، چرخاندن، جدا کردن پیکان.</li><li>سایه، گرادیان، حاشیه روی لوگو.</li><li>روی عکس شلوغ بدون زمینهٔ تیره یا شیشه‌ای.</li></ul></div>
+<div class="card o"><h3>چرا نارنجی نمی‌شود؟</h3><p>نشانه و کلمه یک‌رنگ‌اند تا امضا بمانند. نارنجی فقط یک اکسنت است و نباید با لوگو رقابت کند.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="eye">۹–۱۰ لوگو روی هر سطح · سیستم کاور</div>
+<h2>همهٔ کاورها از <em>یک نقشه</em></h2>
+<p class="lead">هوک با Meem، خط فرعی با IRANSans X، یک کلمهٔ نارنجی، یک لوگو. قانون: در هر کادر حداکثر یک لوگو.</p>
+<div class="split" style="align-items:start">
+<div class="card" style="overflow-x:auto"><table><tr><th>سطح</th><th>نسخه</th><th>جای لوگو</th></tr>
+<tr><td>کاور ریلز ۱۰۸۰×۱۹۲۰</td><td>یخی، پیل شیشه‌ای</td><td>پایین-وسط، مال هوک</td></tr><tr><td>کاور هایلایت</td><td>استفاده نمی‌شود</td><td>هویتش آیکون است</td></tr><tr><td>استوری</td><td>یخی، فقط N</td><td>گوشهٔ بالا-چپ، حدود ۹۰px</td></tr><tr><td>کاروسل — اسلاید آخر</td><td>متناسب با زمینه</td><td>پایین-وسط کنار CTA</td></tr><tr><td>پست تک‌اسلایدی</td><td>متناسب با زمینه</td><td>پایین-وسط، کوچک</td></tr><tr><td>آواتار</td><td>N روی تیره + گلو</td><td>همان آواتار فعلی</td></tr></table></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div class="card n" style="border-radius:34px;background:linear-gradient(#1D32A6,#0B1646 60%);min-height:320px;display:flex;flex-direction:column;justify-content:center"><small style="opacity:.6">روزا از ۷</small><h3 style="font-weight:900">مسیرت رو با <em style="color:var(--o);font-style:normal">تجربه کردن</em> بساز</h3></div>
+<div style="display:grid;gap:12px"><div class="card o" style="border-radius:34px;padding:22px"><h3 style="font-weight:900">نه با <span style="background:var(--n);color:#fff;border-radius:10px;padding:0 8px">حدس</span> زدن.</h3></div><div class="card n" style="border-radius:34px;padding:22px"><div class="hand" style="color:var(--o);font-size:22px">اولین قدم واقعی</div><small style="opacity:.7">هوک ≤ ۷ کلمه و یک عنصر نارنجی</small></div></div>
+</div></div>
+<div class="card o" style="border-radius:99px;margin-top:18px;padding:18px 28px"><b>یادآوری:</b> پیل «روزا از ۷» و کلمهٔ «بشناس» هردو نارنجی‌اند؛ در کاورهای سری، فقط یکی را نارنجی نگه دار.</div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="eye">۱۱ هایلایت</div>
+<h2>دایرهٔ نیمه‌شب + <em>یک آیکون خطی</em></h2>
+<p class="lead">هر هایلایت یک دایرهٔ نیمه‌شب با هالهٔ آبی و یک آیکون خطی یخی است؛ بدون متن داخل دایره، بدون لوگو، عنوان زیر دایره.</p>
+<div class="hl">
+<div><b><svg><use href="#i-compass"/></svg></b>شروع کن</div><div><b><svg><use href="#i-seven"/></svg></b>چالش ۷ روزه</div><div><b><svg><use href="#i-board"/></svg></b>وبینار</div><div><b><svg><use href="#i-team"/></svg></b>دورهمی</div><div><b><svg><use href="#i-q"/></svg></b>بپرس</div></div>
+<div class="grid g2"><div class="card"><h3>قوانین آیکون</h3><ul class="dots"><li>فقط خطی با ضخامت یکسان؛ سروته گرد، گوشه‌ها نرم.</li><li>یخی روی تیره، جوهری روی روشن؛ روی نارنجی سورمه‌ای.</li><li>بدون آیکون توپر، ایموجی یا آیکون آمادهٔ سبک متفاوت.</li></ul></div>
+<div class="card o"><h3>مشخصات کاور هایلایت</h3><ul class="dots"><li>دایره حدود ۸۸۰px با هالهٔ آبی و حاشیهٔ سفید ۲۰٪.</li><li>آیکون حدود ۴۰۰px، وسط دایره.</li><li>عنوان ۱ تا ۲ کلمه، زیر دایره (IRANSans X Medium).</li></ul></div></div>
+</div></section>
+
+<section id="s7"><div class="wrap">
+<div class="eye">۱۲ سیستم آیکون</div>
+<h2>چهارده آیکون، <em>یک زبان</em></h2>
+<div class="grid ic7">
+<div class="ic" style="background:var(--n);color:#fff"><svg><use href="#i-compass"/></svg>قطب‌نما</div><div class="ic" style="background:var(--n);color:#fff"><svg><use href="#i-seven"/></svg>هفت</div><div class="ic" style="background:var(--n);color:#fff"><svg><use href="#i-board"/></svg>تخته</div><div class="ic" style="background:var(--n);color:#fff"><svg><use href="#i-team"/></svg>دورهمی</div><div class="ic" style="background:var(--n);color:#fff"><svg><use href="#i-q"/></svg>سؤال</div><div class="ic" style="background:var(--n);color:#fff"><svg><use href="#i-bulb"/></svg>چراغ</div><div class="ic" style="background:var(--n);color:#fff"><svg><use href="#i-map"/></svg>نقشه</div>
+<div class="ic" style="background:var(--o)"><svg><use href="#i-timer"/></svg>تایمر</div><div class="ic" style="background:var(--o)"><svg><use href="#i-check"/></svg>چک‌لیست</div><div class="ic" style="background:var(--o)"><svg><use href="#i-mic"/></svg>میکروفون</div><div class="ic" style="background:var(--o)"><svg><use href="#i-coin"/></svg>سکه</div><div class="ic" style="background:var(--o)"><svg><use href="#i-doc"/></svg>رزومه</div><div class="ic" style="background:var(--o)"><svg><use href="#i-up"/></svg>رشد</div><div class="ic" style="background:var(--o)"><svg><use href="#i-wave"/></svg>تجربه</div>
+</div>
+<div class="grid g2 g75" style="margin-top:18px">
+<div class="card n"><h3>چرا این آیکون‌ها؟</h3><p>نشانهٔ N یک پیکان رو به بالا و دو موج دارد؛ آیکون‌های نوما همین دو را قرض می‌گیرند: عقربهٔ قطب‌نما و پیکان رشد از پیکانِ N، و خط‌های نرم و موجی از موج‌های N. سه آیکون ستون محتوا: سکه، رزومه و پیکان.</p></div>
+<div class="card"><h3>ساخت و اندازه</h3><ul class="dots"><li>شبکهٔ ۲۴×۲۴، ضخامت خط ۱٫۷ واحد، سروگوشهٔ گرد.</li><li>حداقل ۲۴px دروب؛ یک آیکون در هر کادر، بدون پرشدن و بدون سایه.</li></ul></div></div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="eye">۱۳ پست اسلایدی</div>
+<h2>سه نوع اسلاید، <em>یک ریتم</em></h2>
+<div class="grid g3" style="margin-top:26px;align-items:stretch">
+<div class="card r" style="background:linear-gradient(#2a45d0,#0B1646);min-height:280px;display:flex;flex-direction:column;justify-content:space-between"><h3>مسیرت رو با تجربه کردن بساز</h3><small>۰۱ · تیره + هوک</small></div>
+<div class="card" style="min-height:280px;display:flex;flex-direction:column;justify-content:space-between"><h3>یادمی‌گیری: <span style="color:var(--o)">خودت</span> رو بهتر می‌شناسی</h3><small>۰۲ · روشن + متن</small></div>
+<div class="card n" style="min-height:280px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.14)"><div class="hand" style="color:var(--o);font-size:24px">اولین قدم واقعی</div><div><span class="pill">«مسیر» رو کامنت کن</span><br><small>۰۳ · آخر: تیره + CTA</small></div></div>
+</div>
+<div class="card g" style="margin-top:18px"><ul class="dots"><li>۵ تا ۷ اسلاید؛ هر اسلاید یک ایده.</li><li>عکس واقعی، بدون فیلتر سنگین، با یک عنصر سرمه‌ای.</li><li>ریلز: زیرنویس IRANSans X Medium، حداکثر ۲ خط؛ هوک در ۳ ثانیهٔ اول.</li><li>هوک اسلاید با Meem؛ متن اسلاید روشن Meem با IRANSans X جوهری؛ فقط آخرین جملهٔ تصمیم با Meem Bold.</li></ul>
+<div class="card o" style="border-radius:34px;margin-top:14px"><b>مرحلهٔ بعد:</b> طراحی دقیق این سه اسلاید و کاورها بعد از دریافت نمونه‌هایی که می‌فرستید انجام می‌شود.</div></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="eye">۱۴ صدا و محتوا</div>
+<h2>چطور نوما <em>حرف می‌زند؟</em></h2>
+<div class="grid g2" style="margin-top:26px">
+<div class="card n"><span class="pill">بله (ازلندینگ)</span><ul class="dots"><li>«مسیرت رو با تجربه کردن بساز، نه با حدس زدن.»</li><li>«لازم نیست از همین امروز ته مسیر رو ببینی.»</li><li>«با تجربه‌های واقعی، مسیر مناسب خودت رو پیدا کن.»</li><li>محاوره‌ای و گرم؛ نه رسمی.</li></ul></div>
+<div class="card p"><span class="pill n">نه</span><ul class="dots"><li>«نتیجهٔ تضمینی، درآمد دلاری!»</li><li>لحن آموزگار بالا به پایین.</li><li>جملهٔ قشنگ بدون قدم عملی.</li><li>ایموجی در کاور.</li></ul></div>
+</div>
+<div class="card o" style="border-radius:50px;margin-top:18px;padding:36px"><small>نمونهٔ هوک</small><div class="manifest" style="font-size:clamp(28px,4.5vw,54px);line-height:1.6">مسیرت رو با تجربه کردن بساز، نه با حدس زدن.</div></div>
+<div class="grid g2" style="margin-top:18px"><div class="card" style="border-radius:40px"><b>ستون‌های محتوا:</b> خودشناسی · سواد مالی · مسیرشغلی · رزومه‌نویسی · کارآموزی · ارتباطات و شبکه‌سازی · رشد فردی</div><div class="card" style="border-radius:40px"><b>قالب‌ها:</b> ریلز کوتاه · کاروسل · وبینار ماهانه · چالش ۷ روزه · کامیونیتی و منتور</div></div>
+</div></section>
+
+<section class="dark"><div class="wrap split">
+<div><div class="eye">هنوز تموم نشده</div><h2>هنوز همه‌ی مسیرها رو <em>ندیدی</em></h2><p class="lead" style="margin:0">شاید چیزی که دنبالش هستی جایی بیرون از چیزهایی باشه که تا امروز تجربه کردی.</p></div>
+<div style="display:grid;place-items:center"><div style="width:min(300px,70%);aspect-ratio:1;border-radius:50%;background:var(--o);display:grid;place-items:center;box-shadow:0 0 90px rgba(255,111,31,.35)"><svg width="46%" height="46%" style="fill:none;stroke:#0B1646;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><use href="#i-compass"/></svg></div></div>
+</div></section>
+
+<section class="navy" id="s8"><div class="wrap">
+<div class="eye">تیم</div>
+<h2>تیم <em>نوما</em></h2>
+<div class="team" style="margin-top:26px">
+<figure><img src="assets/team-amir.webp" alt="امیر" loading="lazy"><figcaption>امیر</figcaption></figure>
+<figure><img src="assets/team-tala.webp" alt="طلا" loading="lazy"><figcaption>طلا</figcaption></figure>
+<figure><img src="assets/team-armin.webp" alt="آرمین" loading="lazy"><figcaption>آرمین</figcaption></figure>
+</div></div></section>
+
+<section id="s9"><div class="wrap">
+<div class="eye">نمونه‌ها</div>
+<h2>کاورهای <em>هایلایت</em></h2>
+<p class="lead">نه بخش هایلایت پروفایل؛ برای بزرگ‌نمایی روی هر کدام بزنید.</p>
+<div class="gal" data-g>
+<button><img loading="lazy" src="assets/slide-21.webp" alt="هایلایت ۱"></button><button><img loading="lazy" src="assets/slide-22.webp" alt="هایلایت ۲"></button><button><img loading="lazy" src="assets/slide-23.webp" alt="هایلایت ۳"></button>
+<button><img loading="lazy" src="assets/slide-24.webp" alt="هایلایت ۴"></button><button><img loading="lazy" src="assets/slide-25.webp" alt="هایلایت ۵"></button><button><img loading="lazy" src="assets/slide-26.webp" alt="هایلایت ۶"></button>
+<button><img loading="lazy" src="assets/slide-27.webp" alt="هایلایت ۷"></button><button><img loading="lazy" src="assets/slide-28.webp" alt="هایلایت ۸"></button><button><img loading="lazy" src="assets/slide-29.webp" alt="هایلایت ۹"></button>
+</div></div></section>
+
+<section class="dark" id="s10"><div class="wrap">
+<div class="eye">نمونه‌ها</div>
+<h2>پست‌های <em>اسلایدی</em></h2>
+<div class="sub">نسخهٔ Meem</div>
+<div class="gal two" data-g><button><img loading="lazy" src="assets/slide-31.webp" alt=""></button><button><img loading="lazy" src="assets/slide-32.webp" alt=""></button><button><img loading="lazy" src="assets/slide-33.webp" alt=""></button><button><img loading="lazy" src="assets/slide-34.webp" alt=""></button></div>
+<div class="sub">نسخهٔ Abar</div>
+<div class="gal two" data-g><button><img loading="lazy" src="assets/slide-35.webp" alt=""></button><button><img loading="lazy" src="assets/slide-36.webp" alt=""></button><button><img loading="lazy" src="assets/slide-37.webp" alt=""></button><button><img loading="lazy" src="assets/slide-38.webp" alt=""></button></div>
+<div class="sub">نسخهٔ Peyda</div>
+<div class="gal two" data-g><button><img loading="lazy" src="assets/slide-39.webp" alt=""></button><button><img loading="lazy" src="assets/slide-40.webp" alt=""></button><button><img loading="lazy" src="assets/slide-41.webp" alt=""></button><button><img loading="lazy" src="assets/slide-42.webp" alt=""></button></div>
+</div></section>
+
+<section id="s11"><div class="wrap">
+<div class="eye">نمونه‌ها</div>
+<h2>کاورهای <em>ریلز</em></h2>
+<div class="gal" data-g style="margin-top:26px"><button><img loading="lazy" src="assets/slide-44.webp" alt=""></button><button><img loading="lazy" src="assets/slide-45.webp" alt=""></button><button><img loading="lazy" src="assets/slide-46.webp" alt=""></button></div>
+</div></section>
+
+<section class="orange final"><div class="wrap">
+<div class="eye">قدم نهایی</div>
+<h2 style="font-weight:900">فقط کافیه <span class="hand" style="background:var(--n);color:#fff;border-radius:22px;padding:0 20px;display:inline-block;transform:rotate(-1.5deg)">اصلاحیه ، قدم نهایی</span></h2>
+<p class="lead" style="margin:18px auto 0;font-weight:600">اولین قدم واقعی رو بردار.</p>
+</div></section>
+
+<section class="navy final"><div class="wrap">
+<div class="poem">ای برادر تو همان اندیشه‌ای<br>مابقی تو استخوان و ریشه‌ای<br>گر گلست اندیشه‌ی تو گلشنی<br>ور بود خاری، تو هیمه‌ی گلخنی</div>
+<div class="latin" style="text-align:center;opacity:.6;max-width:640px;margin:0 auto;line-height:1.8">O brother, you are your thought; the rest of you is bone and root. If your thought is a rose, you are a garden; if a thorn, you are fuel for the furnace.</div>
+<div class="credit">طراحی و گردآوری شده هویت بصری نوما توسط مهدی فرهمند</div>
+</div></section>
+
+<footer><div class="wrap">Copyright Noma Academy 2026 | <span>Designed By Farahmand Design</span></div></footer>
+
+<div id="lb"><img alt=""></div>
+<script>
+(function(){var lb=document.getElementById('lb'),im=lb.querySelector('img');
+document.querySelectorAll('[data-g] img').forEach(function(i){i.parentNode.addEventListener('click',function(){im.src=i.src;lb.classList.add('on')})});
+lb.addEventListener('click',function(){lb.classList.remove('on')});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+})();
+
+(function(){var h=document.getElementById('top');if(!h||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+h.addEventListener('pointermove',function(e){var r=h.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+h.querySelectorAll('.orb').forEach(function(o,i){o.style.translate=(x*40*(i+1))+'px '+(y*30*(i+1))+'px'})});})();
+
+(function(){var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var els=document.querySelectorAll('section:not(.hero) .card,.sw,.lg,.ic,.hl,.bar,.team,.gal button,h2,.eye,.lead,.manifest,.sub,.tags');
+els.forEach(function(e){if(rm)return;e.classList.add('sr');var p=e.parentElement,i=[].indexOf.call(p.children,e);e.style.setProperty('--sd',Math.min(i,6)*.08+'s')});
+if('IntersectionObserver' in window&&!rm){var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add('in')});
+document.querySelectorAll('.card,.sw,.lg,.ic').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+})();
+</script>
+</body></html>
