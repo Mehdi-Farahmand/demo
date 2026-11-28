@@ -452,6 +452,16 @@ html[data-uf=abar] :is(section,footer) :not(.nofx):not(.nofx *):not(svg):not(svg
 .tmnav.l{left:6px}.tmnav.r{right:6px}
 @supports (corner-shape:squircle){.tmnav{corner-shape:squircle;border-radius:24px}}
 @media(max-width:620px){.tmnav{display:none}}
+
+.poem{display:flex;flex-direction:column;align-items:center;gap:.35em;line-height:1.9;word-spacing:.12em;letter-spacing:0}
+.poem .pl{display:block;padding:.28em .5em;text-align:center}
+.poem .pl>span{display:inline-block;white-space:nowrap;-webkit-mask-image:linear-gradient(to left,#000 0,#000 calc(var(--w,0%) - 8%),transparent var(--w,0%));mask-image:linear-gradient(to left,#000 0,#000 calc(var(--w,0%) - 8%),transparent var(--w,0%));-webkit-mask-size:100% 100%;mask-size:100% 100%}
+@property --w{syntax:"<percentage>";inherits:false;initial-value:0%}
+.poem.go .pl>span{animation:pw 1.5s cubic-bezier(.55,.1,.35,1) var(--d) forwards}
+@keyframes pw{from{--w:0%}to{--w:112%}}
+.poem .pl::after{content:"";display:none}
+@media(max-width:560px){.poem{font-size:clamp(20px,6.2vw,28px)}.poem .pl>span{white-space:normal}}
+@media(prefers-reduced-motion:reduce){.poem .pl>span{--w:112%;animation:none!important}}
 </style>
 </head>
 <body>
@@ -768,12 +778,12 @@ html[data-uf=abar] :is(section,footer) :not(.nofx):not(.nofx *):not(svg):not(svg
 
 <section class="orange final"><div class="wrap">
 <div class="eye">قدم نهایی</div>
-<h2 style="font-weight:900">فقط کافیه <span class="hand" style="background:var(--n);color:#fff;border-radius:22px;padding:0 20px;display:inline-block;transform:rotate(-1.5deg)">اصلاحیه ، قدم نهایی</span></h2>
-<p class="lead" style="margin:18px auto 0;font-weight:600">اولین قدم واقعی رو بردار.</p>
+<h2 style="font-weight:900">هر قدمی از <span class="hand" style="background:var(--n);color:#fff;border-radius:22px;padding:0 20px;display:inline-block;transform:rotate(-1.5deg)">پذیرش و اصلاح</span> شروع میشه</h2>
+<p class="lead" style="margin:18px auto 0;font-weight:600">اولین قدمتو با پذیرش و ناقص بردار و تو مسیر اصلاحش کن.</p>
 </div></section>
 
 <section class="navy final"><div class="wrap">
-<div class="poem">ای برادر تو همان اندیشه‌ای<br>مابقی تو استخوان و ریشه‌ای<br>گر گلست اندیشه‌ی تو گلشنی<br>ور بود خاری، تو هیمه‌ی گلخنی</div>
+<div class="poem" id="poem" aria-label="ای برادر تو همان اندیشه‌ای، مابقی تو استخوان و ریشه‌ای، گر گلست اندیشه‌ی تو گلشنی، ور بود خاری، تو هیمه‌ی گلخنی"><span class="pl" style="--d:0.0s" aria-hidden="true"><span>ای برادر تو همان اندیشه‌ای</span></span><span class="pl" style="--d:1.7s" aria-hidden="true"><span>مابقی تو استخوان و ریشه‌ای</span></span><span class="pl" style="--d:3.4s" aria-hidden="true"><span>گر گلست اندیشه‌ی تو گلشنی</span></span><span class="pl" style="--d:5.1s" aria-hidden="true"><span>ور بود خاری، تو هیمه‌ی گلخنی</span></span></div>
 <div class="latin" style="text-align:center;opacity:.6;max-width:640px;margin:0 auto;line-height:1.8">O brother, you are your thought; the rest of you is bone and root. If your thought is a rose, you are a garden; if a thorn, you are fuel for the furnace.</div>
 <div class="credit">طراحی و گردآوری شده هویت بصری نوما توسط مهدی فرهمند</div>
 </div></section>
@@ -904,5 +914,8 @@ mq.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='Arrow
 function go(d){hold(3500);mq.scrollBy({left:d*292,behavior:rm?'auto':'smooth'})}
 [].forEach.call(tq.querySelectorAll('.tmnav'),function(b){b.addEventListener('click',function(){go(+b.dataset.d)})});
 })();
+
+(function(){var p=document.getElementById('poem');if(!p)return;if(!('IntersectionObserver'in window)){p.classList.add('go');return}
+new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){p.classList.add('go');o.disconnect()}})},{threshold:.35}).observe(p)})();
 </script>
 </body></html>
