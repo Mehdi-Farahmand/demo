@@ -403,6 +403,7 @@ html[data-uc] :is(section,footer) :not(.nofx):not(.nofx *):not(svg):not(svg *):n
 .bar{border-radius:26px}
 [style*="border-radius:99px"]{border-radius:30px!important}
 @supports (corner-shape:squircle){.pill,.gpill,.chips>span,.tags>span,.hb2,.hlogo,.fd,.bar,.card,.sw,.lg,.ic,.gal button,.team figure,.cs,.cnav,.rs,.ctl button,[style*="border-radius:99px"]{corner-shape:squircle}.pill,.gpill,.chips>span,.tags>span{border-radius:24px}.hb2,.hlogo,.fd,.cnav{border-radius:24px}.bar{border-radius:40px}[style*="border-radius:99px"]{border-radius:46px!important}}
+@supports (corner-shape:squircle){.card::before,.card::after,.sw::before,.sw::after,.lg::before,.ic::before,.ic::after,.cs::after,.gal button::before,.gal button::after{corner-shape:inherit}}
 </style>
 </head>
 <body>
