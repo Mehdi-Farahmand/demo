@@ -453,14 +453,14 @@ html[data-uf=abar] :is(section,footer) :not(.nofx):not(.nofx *):not(svg):not(svg
 @supports (corner-shape:squircle){.tmnav{corner-shape:squircle;border-radius:24px}}
 @media(max-width:620px){.tmnav{display:none}}
 
-.poem{display:flex;flex-direction:column;align-items:center;gap:.35em;line-height:1.9;word-spacing:.12em;letter-spacing:0}
-.poem .pl{display:block;padding:.28em .5em;text-align:center}
-.poem .pl>span{display:inline-block;white-space:nowrap;-webkit-mask-image:linear-gradient(to left,#000 0,#000 calc(var(--w,0%) - 8%),transparent var(--w,0%));mask-image:linear-gradient(to left,#000 0,#000 calc(var(--w,0%) - 8%),transparent var(--w,0%));-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.poem{display:flex;flex-direction:column;align-items:center;gap:.55em;line-height:1.9;overflow:visible;max-width:100%;word-spacing:.12em;letter-spacing:0}
+.poem .pl{display:block;padding:.3em .6em;overflow:visible;text-align:center}
+.poem .pl>span{display:inline-block;white-space:nowrap;padding:.7em .6em;margin:-.7em -.6em;-webkit-mask-image:linear-gradient(to left,#000 0,#000 calc(var(--w,0%) - 8%),transparent var(--w,0%));mask-image:linear-gradient(to left,#000 0,#000 calc(var(--w,0%) - 8%),transparent var(--w,0%));-webkit-mask-size:100% 100%;mask-size:100% 100%}
 @property --w{syntax:"<percentage>";inherits:false;initial-value:0%}
 .poem.go .pl>span{animation:pw 1.5s cubic-bezier(.55,.1,.35,1) var(--d) forwards}
 @keyframes pw{from{--w:0%}to{--w:112%}}
 .poem .pl::after{content:"";display:none}
-@media(max-width:560px){.poem{font-size:clamp(20px,6.2vw,28px)}.poem .pl>span{white-space:normal}}
+@media(max-width:560px){.poem{font-size:clamp(19px,5.6vw,26px);gap:.7em}.poem .pl>span{white-space:normal;padding:.7em .3em;margin:-.7em -.3em}}
 @media(prefers-reduced-motion:reduce){.poem .pl>span{--w:112%;animation:none!important}}
 </style>
 </head>
